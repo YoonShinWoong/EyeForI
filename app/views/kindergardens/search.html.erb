@@ -112,7 +112,7 @@
             // for(i=index;i<index+3;i++){
             for(var key in e["kind"]){
               // console.log(e["kind"][key].crname)
-              $(".search_list").append("<div class=\"search_list_card\"><div class=\"search_list_card_img\"><div class=\"search_list_card_img_border\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWpFYPyGbTwHTdG7ku62LXJ0fXv_AxeydKede-DaT7o7QCi13E\"></div></div><div class=\"search_list_card_text\"><h2>"+e["kind"][key].crname+"</h2><p>주소:"+e["kind"][key].craddr+"</p><button class=\"shadow-sm\" onClick=\"gotoposi("+e["kind"][key].crname.id+")\"><i style=\"margin-right:10px\"class=\"fas fa-map-marker-alt\"></i>위치보기</button><button data-toggle=\"modal\" data-target=\".detail-info\" class=\"shadow-sm\"><i style=\"margin-right:10px;\"class=\"fas fa-search\"></i>상세보기</button></div></div>");
+              $(".search_list").append("<div class=\"search_list_card\"><div class=\"search_list_card_img\"><div class=\"search_list_card_img_border\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWpFYPyGbTwHTdG7ku62LXJ0fXv_AxeydKede-DaT7o7QCi13E\"></div></div><div class=\"search_list_card_text\"><h2>"+e["kind"][key].crname+"</h2><p>주소:"+e["kind"][key].craddr+"</p><button class=\"shadow-sm\" onClick=\"gotoposi("+e["kind"][key].id+")\"><i style=\"margin-right:10px\"class=\"fas fa-map-marker-alt\"></i>위치보기</button><button data-toggle=\"modal\" data-target=\".detail-info\" class=\"shadow-sm\"><i style=\"margin-right:10px;\"class=\"fas fa-search\"></i>상세보기</button></div></div>");
             }
             index += 3;
           },

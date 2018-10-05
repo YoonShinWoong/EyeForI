@@ -161,8 +161,13 @@ class KindergardensController < ApplicationController
   
   def getKinder
     
-    @kinder = Kindergarden.where("sidoname like ? and sigunguname like ? and crname like ?", "%#{params[:sido]}%","%#{params[:sigu]}%","%#{params[:crname]}%")
-    
+    if params[:sido] != "전체" && params[:sigu] != "전체" 
+      @kinder = Kindergarden.where("sidoname like ? and sigunguname like ? and crname like ?", "%#{params[:sido]}%","%#{params[:sigu]}%","%#{params[:crname]}%")
+    elsif params[:sido] != "전체" && params[:sigu] == "전체"
+      @kinder = Kindergarden.where("sidoname like ? and crname like ?","%#{params[:sido]}%","%#{params[:crname]}%")[0..30]
+    else
+      @kinder = Kindergarden.where("crname like ?","%#{params[:crname]}%")[0..30]
+    end
     @rev = {
       "kind" => @kinder
     }
